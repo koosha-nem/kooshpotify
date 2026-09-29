@@ -1,0 +1,13 @@
+services:
+  kooshpotify-app:
+    build: .
+    container_name: kooshpotify
+    restart: unless-stopped
+    volumes:
+      # Bind mount for your live music files (Read-Only)
+      - ./music:/app/music:ro
+      # Named volume for your SQLite database so data persists across rebuilds
+      - kooshpotify_db:/app/data
+
+volumes:
+  kooshpotify_db:

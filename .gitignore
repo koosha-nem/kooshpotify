@@ -1,1 +1,4 @@
-assets/music/
+/assets/music/*
+/assets/music/.gitkeep
+/data/
+.env
